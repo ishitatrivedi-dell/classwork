@@ -1,0 +1,595 @@
+C QUESTIONS
+
+
+1)
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    printf("hello world");
+
+    return 0;
+}
+
+2)
+#include <stdio.h>
+
+int main() {
+    int a = 2;
+    int b= 4;
+    int c = a+b;
+    printf("%d", c);
+
+    return 0;
+}
+
+ // 3)
+#include <stdio.h>
+// int main (){
+//     int a = 4;
+//     int b = 8;
+//     int c = 4;
+//     if (a>=b && a>=c){
+//         printf("%d is the largest number\n", a);
+//     }
+//     else if  (b>=a && b>=c){
+//             printf("%d is the largest number\n", b);
+//         }
+//         else{
+//             printf("%d is the largest number\n", c);
+//         }
+//     return 0;
+// }
+
+4)
+#include <stdio.h>
+
+int main() {
+    int a = 2 ;
+    if(a%2 == 0 ){
+        printf("%d is an even number\n", a);
+        
+    }else {
+        printf("%d is an odd number\n", a);
+    }
+}
+
+5)
+#include <stdio.h>
+
+int main() {
+    int a = 3; // Number for which we want to find the factorial
+    int i;
+    int factorial = 1; // Initialize factorial to 1
+
+    // Calculate the factorial using a for loop
+    for (i = 1; i <= a; i++) {
+        factorial *= i; // Multiply factorial by i in each iteration
+    }
+
+    // Print the result
+    printf("Factorial of %d is %d\n", a, factorial);
+
+    return 0;
+}
+
+6)
+#include <stdio.h>  
+
+int main() {    
+    int n, r, sum = 0, temp;    
+    printf("Enter the number: ");    
+    scanf("%d", &n);    
+    temp = n;    
+    while (n > 0) {    
+        r = n % 10;    
+        sum = (sum * 10) + r;    
+        n = n / 10;    
+    }    
+    if (temp == sum)    
+        printf("Palindrome number\n");    
+    else    
+        printf("Not palindrome\n");   
+        
+    return 0;  
+}
+
+
+7)
+int main ()
+{
+    int num, reverse = 0, rem, temp;
+    num=11211;
+    printf("The number is :%d\n",num);
+ 
+    temp = num;
+    
+    //loop to find reverse number
+    while(temp != 0)
+    {
+        rem = temp % 10;
+        reverse = reverse * 10 + rem;
+        temp /= 10;
+    };
+    
+    // palindrome if num and reverse are equal
+    if (num == reverse)
+        printf("%d is Palindrome\n", num);
+    else
+        printf("%d is Not Palindrome\n", num);
+
+}
+
+
+8)
+#include <stdio.h>
+
+int main() {
+    int a = 2;
+    int b= 4;
+    int c = a+b;
+    printf("%d", c);
+
+    return 0;
+}
+
+9)
+#include <stdio.h>
+
+int isPrime(int num) {
+  
+    if (num <= 1) {
+        return 0;  // Not prime
+    }
+    if (num <= 3) {
+        return 1;  // 2 and 3 are prime
+    }
+    if (num % 2 == 0 || num % 3 == 0) {
+        return 0;  
+    }
+    
+       int i;
+    for (i = 5; i * i <= num; i += 6) {
+        if (num % i == 0 || num % (i + 2) == 0) {
+            return 0;  
+        }
+    }
+    
+    return 1;  
+}
+
+
+10)
+#include <stdio.h>
+
+int main() {
+    int n; // Number of Fibonacci numbers to print
+    printf("Enter the number of Fibonacci numbers to print: ");
+    scanf("%d", &n); // Read the number of terms from the user
+
+    if (n <= 0) {
+        printf("Please enter a positive integer.\n");
+        return 1; // Exit with an error code
+    }
+
+    int a = 0;
+    int b = 1;
+
+    printf("Fibonacci sequence:\n");
+
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", a); // Print the current Fibonacci number
+        int c = a + b; // Calculate the next Fibonacci number
+        a = b; // Update `a` to the next Fibonacci number
+        b = c; // Update `b` to the next Fibonacci number
+    }
+
+    printf("\n");
+    return 0; // Exit successfully
+}
+
+11)
+#include <stdio.h>
+int main () {
+int a = 23;
+int b = 45;
+printf("before swapping: a = %d, b=%d\n" , a ,b );
+
+a = a+b; 
+b = a-b;
+a = a-b;
+
+printf( " after swapping : a= %d, b = %d\n", a,b);
+return 0;
+
+}
+ 12) 
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+  int a = 23;
+  int b = 45;
+  int temp ;
+  printf("before swapping: a= %d, b=%d\n" , a,b );
+  
+  temp = a;
+  a=b;
+  b=a;
+  printf("after swapping: a= %d, b= %d\n", a,b);
+  return 0;
+}
+
+13)  // Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int year;
+    printf("enter a year: ");
+    scanf("%d, &year");
+    if ((year%4 ==0 && year % 100 !=0) || (year % 400 ==0)){
+        printf("%d is a leap year.\n", year);
+        
+    } else {
+        printf("%d is not  a leap year.\n", year);
+    }
+}
+
+ 14) 
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    // Display the calculator menu
+    printf("Simple Calculator\n");
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator); // Note the space before %c to skip any whitespace characters
+
+    // Prompt the user to enter two numbers
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // Perform the calculation based on the operator using if-else
+    if (operator == '+') {
+        result = num1 + num2;
+        printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
+    } else if (operator == '-') {
+        result = num1 - num2;
+        printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
+    } else if (operator == '*') {
+        result = num1 * num2;
+        printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
+    } else if (operator == '/') {
+        // Check if the denominator is zero
+        if (num2 != 0) {
+            result = num1 / num2;
+            printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
+        } else {
+            printf("Error! Division by zero.\n");
+        }
+    } else {
+        printf("Error! Invalid operator.\n");
+    }
+
+    return 0;
+}
+
+ 
+15)
+#include <stdio.h>
+int main() {
+    int arr[7]={4,3,2,1,7,8,6};
+    int sum=0;
+    int len = sizeof(arr)/sizeof(arr[0]);
+
+   for( int i=0; i<len; i++){
+       sum =sum + arr[i];
+   }
+  printf("%d", sum);
+    
+    return 0 ;
+} 
+
+16)
+#include <stdio.h>
+// int main (){
+//     int a = 4;
+//     int b = 8;
+//     int c = 4;
+//     if (a>=b && a>=c){
+//         printf("%d is the largest number\n", a);
+//     }
+//     else if  (b>=a && b>=c){
+//             printf("%d is the largest number\n", b);
+//         }
+//         else{
+//             printf("%d is the largest number\n", c);
+//         }
+//     return 0;
+
+
+
+
+
+17)
+
+#include <stdio.h>
+
+int main() {
+    char str[] = "apple is a fruit";  
+    int len = 0;                      
+
+   
+    while (str[len] != '\0') {
+        len++;  
+    }
+
+    printf("%d\n", len);  
+
+    return 0;
+}
+
+18)
+
+ 
+19)#include <stdio.h>
+
+// Function to compute GCD using Euclidean algorithm
+int gcd(int a, int b) {
+    // Ensure b is not zero to prevent division by zero
+    while (b != 0) {
+        int temp = b;
+        b = a % b;  // remainder of a divided by b
+        a = temp;   // assign b to a
+    }
+    return a;  // a is the GCD
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Compute GCD
+    int result = gcd(num1, num2);
+
+    printf("GCD of %d and %d is %d\n", num1, num2, result);
+
+    return 0;
+}
+
+20) 
+#include <stdio.h>
+
+// Function to compute GCD using Euclidean algorithm
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;  // remainder of a divided by b
+        a = temp;   // assign b to a
+    }
+    return a;  // a is the GCD
+}
+
+// Function to compute LCM using the relationship between GCD and LCM
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Compute LCM
+    int result = lcm(num1, num2);
+
+    printf("LCM of %d and %d is %d\n", num1, num2, result);
+
+    return 0;
+}
+
+21) 
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    // Prompt the user for a character
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    // Display the ASCII value of the entered character
+    printf("The ASCII value of '%c' is %d\n", ch, (int)ch);
+
+    return 0;
+}
+
+
+
+22)
+include <stdio.h>
+
+int main() {
+ float ferenheit,celcius ;
+ 
+    celcius = 3.5;
+    ferenheit = celcius*9/5+32;
+    printf("\n \n , tempertature in ferenheit is %f", ferenheit );
+ 
+}
+
+23)
+#include <stdio.h>  
+
+int main() {    
+ float fehrenheit,celsius ;
+ 
+    Fahrenheit = 3.5;
+    Celsius = (ferenheit-32) *9/5;
+    
+    printf("\n \n , temperature in Celsius is %f", Celsius );
+ 
+}
+
+24) 
+#include <stdio.h>
+
+int main() {
+    int n = 40;
+    int sum = n*(n+1)/2;
+    
+    printf("%d", sum);
+
+    return 0;
+}
+
+25)
+#include <stdio.h>
+#include <ctype.h>  // For tolower() function
+
+int main() {
+    char ch;
+
+    // Prompt the user for a character
+    printf("Enter a character: ");
+    scanf(" %c", &ch);  // Note the space before %c to handle any leading whitespace
+
+    // Convert character to lowercase to simplify checks
+    ch = tolower(ch);
+
+    // Check if the character is a letter
+    if ((ch >= 'a' && ch <= 'z')) {
+        // Check if the character is a vowel
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            printf("The character '%c' is a vowel.\n", ch);
+        } else {
+            printf("The character '%c' is a consonant.\n", ch);
+        }
+    } else {
+        printf("The character '%c' is not an alphabetic letter.\n", ch);
+    }
+
+    return 0;
+}
+ 
+26)
+#include <stdio.h>
+#include <ctype.h>  // For isalpha(), isdigit(), and isspace() functions
+
+int main() {
+    char ch;
+
+    // Prompt the user for a character
+    printf("Enter a character: ");
+    scanf(" %c", &ch);  // Note the space before %c to handle any leading whitespace
+
+    // Check if the character is an alphabetic letter
+    if (isalpha(ch)) {
+        printf("The character '%c' is an alphabet.\n", ch);
+    }
+    // Check if the character is a digit
+    else if (isdigit(ch)) {
+        printf("The character '%c' is a digit.\n", ch);
+    }
+    // Check if the character is a space or a tab
+    else if (isspace(ch)) {
+        printf("The character '%c' is a whitespace character.\n", ch);
+    }
+    // If it's neither alphabet, digit, nor whitespace, it's a special character
+    else {
+        printf("The character '%c' is a special character.\n", ch);
+    }
+
+    return 0;
+}
+
+27)
+#include <stdio.h>
+
+int countDigits(int n) {
+    if (n == 0) return 1; // Special case for zero
+    
+    int count = 0;
+    if (n < 0) n = -n; // Manually handle negative numbers
+    
+    while (n > 0) {
+        count++;
+        n /= 10;
+    }
+
+    return count;
+}
+
+int main() {
+    printf("%d\n", countDigits(12345)); // Output: 5
+    printf("%d\n", countDigits(-6789)); // Output: 4
+    printf("%d\n", countDigits(0));     // Output: 1
+    return 0;
+}
+
+28)
+
+29)
+
+
+
+
+30)
+int main()
+{
+    int base, exponent;
+    float power = 1;
+ 
+    /* Take base and exponent as input*/
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+    int expo = exponent;
+ 
+    //to calculate the power of negative exponents
+    while (expo < 0)
+    {
+        power = power/base;
+        expo++;
+    }
+ 
+    //To calculate the power of positive exponents
+    while(expo>0)
+    {
+        power = power * base;
+        expo--;
+    }
+    printf("%d ^ %d = %f", base, exponent, power);
+
+
+33)
+
+#include <stdio.h>
+
+int main() {
+    
+    int numbers[] = {10, 20, 30, 40, 50};
+    int sum = 0;
+    int count = sizeof(numbers) / sizeof(numbers[0]);
+    
+    s
+    for (int i = 0; i < count; i++) {
+        sum += numbers[i];
+    }
+    
+    
+    double average = (double)sum / count;
+    
+   
+    printf("The average of the numbers is: %.2f\n", average);
+    
+    return 0;
+}
+
+
